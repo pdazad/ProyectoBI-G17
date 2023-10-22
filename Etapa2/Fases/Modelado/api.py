@@ -32,9 +32,6 @@ async def predict(file: UploadFile):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-@app.get("/")
-async def read_form(request):
-    return templates.TemplateResponse("form.html", {"request": request})
 
 if __name__ == "__main__":
     import uvicorn
