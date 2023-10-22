@@ -14,7 +14,10 @@ import contractions
 class Limpieza(BaseEstimator, TransformerMixin):
     
     def __init__(self):
-        self.stop_words = set(stopwords.words('spanish'))
+        stop_words = stopwords.words('spanish')
+        stop_words.append("usarlas")
+        stop_words.append("ejecutarlo")
+        self.stop_words = set(stop_words)
 
     def fit(self, X, y=None):
         print("Limpieza")
